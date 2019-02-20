@@ -1,0 +1,18 @@
+
+.about-body{
+    opacity: .7;
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 50px;
+    font-size: 1.2em;
+    height: max-content;
+}
+
+.paragraph{
+    margin-bottom: 10%;
+}
+

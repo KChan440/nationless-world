@@ -48,6 +48,17 @@ export default class Survey extends Component{
     render(){
 
         return(
+            <div>
+            <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="#home">Nationless World</Navbar.Brand>
+            <Navbar.Collapse>
+            <Nav className="ml-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/About">About</Nav.Link>
+            </Nav>
+            </Navbar.Collapse>
+            </Navbar>
+
             <div className="survey-body">
 
             <div id="header">
@@ -136,6 +147,7 @@ export default class Survey extends Component{
 
             <input className="submit" type="submit" value="Submit"/>
             </form>
+            </div>
             </div>
             </div>
         )
