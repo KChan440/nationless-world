@@ -1,0 +1,143 @@
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#header{
+  margin-top: 15%;
+  text-align: center;
+
+}
+
+#header .logo{
+	display: inline-block;
+}
+
+#header .header-body{
+	margin-top: 5%;
+}
+
+#header .rsvp{
+	display: block;
+    color: #ffffff;
+    border: none;
+    background: tomato;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 1.3em;
+    width: 80px;
+    height: 40px;
+    text-decoration: none;
+    outline: none;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+#header .rsvp:hover{
+	background:salmon;
+}
+
+.survey-body{
+    opacity: .7;
+    color: white;
+    text-align: center;
+    background-color: black;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 1.2em;
+}
+
+#questions .questions-form{
+  margin-top: 15%;
+}
+
+#questions .questions-form .form-group{
+  margin-top: 15%;
+}
+
+label{
+  display: block;
+  margin-bottom: 15px;
+}
+
+#questions .questions-form .form-group .text-box{
+  text-align: center;
+  border-color: transparent;
+  border-bottom: dotted;
+  border-bottom-color: white;
+  border-radius: 6px;
+  color: white;
+  resize: none;
+  background: 0 0;
+  outline: 0;
+  font-family: "Source Sans Pro",sans-serif;
+  width: 75%;
+  font-size: 20px;
+  padding: 3px;
+  margin: 2px;
+}
+
+#questions .questions-form .form-group .text-area{
+  border-style: dashed;
+  border-color: white;
+  border-radius: 6px;
+  color: white;
+  background: 0 0;
+  outline: 0;
+  font-family: "Source Sans Pro",sans-serif;
+  width: -webkit-fill-available;
+  height: auto;
+  font-size: 20px;
+  padding: 3px;
+  margin: 2px;
+}
+
+#questions .questions-form .submit {
+  display: block;
+  color: #ffffff;
+  border: none;
+  background: black;
+  border: .3px solid black;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10%;
+  cursor: pointer;
+  font-size: 1.0em;
+  width: 120px;
+  height: 40px;
+  text-decoration: none;
+  outline: none;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+#questions .questions-form .submit:hover{
+  background:salmon;
+}
