@@ -13,7 +13,7 @@ export default class About extends Component{
             <Navbar.Brand href="#home">Nationless World</Navbar.Brand>
             <Navbar.Collapse>
             <Nav className="ml-auto">
-            <Nav.Link href="/About">About</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/Survey">Questionnaire</Nav.Link>
             </Nav>
             </Navbar.Collapse>
