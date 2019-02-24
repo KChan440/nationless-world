@@ -8,7 +8,7 @@ import '../style/landing.css';
 
 const BottomBar = styled.div`
 background-color: black;
-height: 10%;
+height: 80px;
 position: fixed;
 bottom: 0;
 width: 100%;
@@ -18,7 +18,7 @@ export default class Landing extends Component{
         return(
             <div>
             <Navbar className="black" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Nationless World</Navbar.Brand>
+            <Navbar.Brand className="nav-brand" href="#home">Nationless World</Navbar.Brand>
             <Navbar.Collapse>
             <Nav className="ml-auto">
             <Nav.Link href="/About">About</Nav.Link>
