@@ -10,7 +10,7 @@ export default class About extends Component{
         return(
             <div>
             <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Nationless World</Navbar.Brand>
+            <Navbar.Brand className="nav-brand" href="#home">Nationless World</Navbar.Brand>
             <Navbar.Collapse>
             <Nav className="ml-auto">
             <Nav.Link href="/">Home</Nav.Link>

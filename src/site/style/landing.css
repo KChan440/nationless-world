@@ -19,12 +19,10 @@ body {
     left: 5%;
 }
 
-.black{
-    background-color: black !important;
-}
 
  .navbar {
   min-height: 80px;
+  background-color: black !important;
 }
 
 .navbar-brand {
