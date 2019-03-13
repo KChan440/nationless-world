@@ -1,8 +1,12 @@
 
+.header{
+    text-align: center;
+    margin-bottom: 5%;
+}
 .about-body{
     opacity: .83;
     color: white;
-    text-align: center;
+    text-align: justify;
     background-color: black;
     margin-top: 10%;
     margin-left: 30%;
@@ -13,6 +17,6 @@
 }
 
 .paragraph{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 

@@ -19,7 +19,6 @@
 }
 
 #header{
-  margin-top: 15%;
   text-align: center;
 
 }
@@ -29,7 +28,6 @@
 }
 
 #header .header-body{
-	margin-top: 5%;
 }
 
 #header .rsvp{
@@ -64,18 +62,20 @@
     text-align: center;
     background-color: black;
     padding-top: 0%;
-    margin-top: 0%;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
     font-size: 1.2em;
+    padding: 10%;
+
 }
 
 #questions .questions-form{
-  margin-top: 15%;
 }
 
 #questions .questions-form .form-group{
   margin-top: 15%;
+  text-align: justify;
 }
 
 label{

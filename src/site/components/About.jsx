@@ -19,7 +19,7 @@ export default class About extends Component{
             </Navbar.Collapse>
             </Navbar>
             <div className="about-body">
-            <h1>Our Story</h1>
+            <h1 className="header">Our Story</h1>
             <p className="paragraph">Throughout human history, there has lived and endured a belief in the unity of all humanity - an understanding that there is, at our foundation, a common and essential soil of being human. But it has not been until today, in this moment of history, that the true coming together of humankind has become realizable.
 
 </p>
