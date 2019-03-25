@@ -1,8 +1,16 @@
 import React, {Component} from 'react';
 import {Redirect, Switch} from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap/';
+import styled from 'styled-components';
 import firebase from '../../firebase';
 import '../style/survey.css';
+
+const Description = styled.div`
+text-align: justify;
+font-size: .66em;
+font-style: italic;
+margin-top: 3%;
+`;
 
 export default class Survey extends Component{
     constructor(props){
@@ -64,6 +72,12 @@ export default class Survey extends Component{
             <div id="header">
             <div className="header-body">
             <h2>Nationless World Short Questionnaire</h2>
+            <Description>
+You don't have to answer all of the questions below. Only the questions marked with an asterisk (*) are required. Outside of these, we recommend that you choose to respond to at least 4. Find the questions that fill you with feeling and words, the questions that fill you with things that need to be said. 
+
+            </Description>
+            <Description>
+At the end of the questionnaire, we ask that you attach at least 3 photos. These photos are images meant to represent you, your identity, and also your community. We recommend submitting at least 1 photo of yourself, alone. </Description>
             </div>
             </div>
 
