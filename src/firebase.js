@@ -5,7 +5,7 @@ const config = {
     authDomain: "nationless-world.firebaseapp.com",
     databaseURL: "https://nationless-world.firebaseio.com",
     projectId: "nationless-world",
-    storageBucket: "",
+    storageBucket: "gs://nationless-world.appspot.com/",
     messagingSenderId: "51822215063"
   };
 

@@ -3,6 +3,7 @@ import {Redirect, Switch} from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap/';
 import styled from 'styled-components';
 import firebase from '../../firebase';
+import FileUploader from 'react-firebase-file-uploader';
 import '../style/survey.css';
 
 const Description = styled.div`
@@ -15,9 +16,46 @@ margin-top: 3%;
 export default class Survey extends Component{
     constructor(props){
         super(props);
+        this.state = {
+            image: null,
+            url: '',
+            progress: 0,
+            username: '',
+
+        }
         this.database = firebase.database().ref().child('responses');
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange = e => {
+        if (e.target.files[0]) {
+            const image = e.target.files[0];
+            this.setState(() => ({image}));
+        }
+    }
+    handleChangeUsername = (event) => this.setState({username: event.target.value});
+
+    handleUploadStart = () => {
+        this.setState({isUploading: true, progress: 0});
+    }
+
+    handleProgress = (progress) => this.setState({progress});
+
+    handleUploadError = (error) => {
+        this.setState({isUploading: false});
+        console.error(error);
+    }
+
+    handleUploadSuccess = (filename) => {
+        if(this.state.username === ''){
+            alert("Please type in your username before uploading images!");
+            this.setState({image: null, url: ''});
+        }else{
+            this.setState({avatar: filename, progress: 100, isUploading: false});
+            firebase.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({avatarURL: url}));
+        }
+    };
 
     handleSubmit(event){
         event.preventDefault();
@@ -45,16 +83,22 @@ export default class Survey extends Component{
                 name: params.name,
                 data: params
             })
-                    }else{
+        }else{
             alert("You haven't inputted a name and location!");
         }
-                window.location.href = '/';
+        window.location.href = '/';
 
 
     }
 
     render(){
-
+        const style = {
+            height: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
+        };
         return(
             <div>
             <Navbar bg="dark" variant="dark">
@@ -73,11 +117,11 @@ export default class Survey extends Component{
             <div className="header-body">
             <h2>Nationless World Short Questionnaire</h2>
             <Description>
-You don't have to answer all of the questions below. Only the questions marked with an asterisk (*) are required. Outside of these, we recommend that you choose to respond to at least 4. Find the questions that fill you with feeling and words, the questions that fill you with things that need to be said. 
+            You don't have to answer all of the questions below. Only the questions marked with an asterisk (*) are required. Outside of these, we recommend that you choose to respond to at least 4. Find the questions that fill you with feeling and words, the questions that fill you with things that need to be said. 
 
             </Description>
             <Description>
-At the end of the questionnaire, we ask that you attach at least 3 photos. These photos are images meant to represent you, your identity, and also your community. We recommend submitting at least 1 photo of yourself, alone. </Description>
+            At the end of the questionnaire, we ask that you attach at least 3 photos. These photos are images meant to represent you, your identity, and also your community. We recommend submitting at least 1 photo of yourself, alone. </Description>
             </div>
             </div>
 
@@ -86,7 +130,7 @@ At the end of the questionnaire, we ask that you attach at least 3 photos. These
 
             <div className="form-group">
             <label htmlFor="name">Please list your full name*</label>
-            <input className="text-box" type="text" name="name" ref={name => this.inputName = name} required/>
+            <input className="text-box" type="text" name="name" ref={name => this.inputName = name} onChange={this.handleChangeUsername} required/>
             </div>
 
             <div className="form-group">
@@ -158,6 +202,21 @@ At the end of the questionnaire, we ask that you attach at least 3 photos. These
             <label htmlFor="message">What message would you like to share with the rest of the world, on behalf of your land and its people?</label>
             <textarea className="text-area" rows="5" type="text" name="message" ref={message => this.inputMessage = message}/>
             </div>           
+
+            <div className="form-group">
+            <label>Please attach any images that you think would further add to the responses above. You can choose multiple images under one selection of "Choose Files". Make sure you have filled out your full name before uploading.</label>
+            <FileUploader
+            style={{marginLeft:"20%"}}
+            multiple
+            accept="image/*"
+            name="avatar"
+            storageRef={firebase.storage().ref('images/' + this.state.username)}
+            onUploadStart={this.handleUploadStart}
+            onUploadError={this.handleUploadError}
+            onUploadSuccess={this.handleUploadSuccess}
+            onProgress={this.handleProgress}
+            />
+            </div>
 
             <input className="submit" type="submit" value="Submit"/>
             </form>
