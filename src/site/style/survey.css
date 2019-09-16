@@ -18,6 +18,14 @@
   }
 }
 
+.language_toggle_button{
+    position: relative;
+    margin-left: -80%;
+    margin-top: -20%;
+    font-size: .6em;
+    background-color: black;
+}
+
 #header{
   text-align: center;
 
